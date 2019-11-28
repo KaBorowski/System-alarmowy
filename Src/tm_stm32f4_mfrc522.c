@@ -18,9 +18,11 @@
  */
 #include "tm_stm32f4_mfrc522.h"
 
+extern SPI_HandleTypeDef *hspi_rfid;
+
 void TM_MFRC522_Init(void) {
-	TM_MFRC522_InitPins();
-	TM_SPI_Init(MFRC522_SPI, MFRC522_SPI_PINSPACK);
+//	TM_MFRC522_InitPins();
+//	TM_SPI_Init(MFRC522_SPI, MFRC522_SPI_PINSPACK);
 
 	TM_MFRC522_Reset();
 
@@ -41,7 +43,7 @@ void TM_MFRC522_Init(void) {
 TM_MFRC522_Status_t TM_MFRC522_Check(uint8_t* id) {
 	TM_MFRC522_Status_t status;
 	//Find cards, return card type
-	status = TM_MFRC522_Request(PICC_REQIDL, id);	
+	status = TM_MFRC522_Request(PICC_REQIDL, id);
 	if (status == MI_OK) {
 		//Card detected
 		//Anti-collision, return card serial number 4 bytes
@@ -62,39 +64,55 @@ TM_MFRC522_Status_t TM_MFRC522_Compare(uint8_t* CardID, uint8_t* CompareID) {
 	return MI_OK;
 }
 
-void TM_MFRC522_InitPins(void) {
-	GPIO_InitTypeDef GPIO_InitStruct;
-	//Enable clock
-	RCC_AHB1PeriphClockCmd(MFRC522_CS_RCC, ENABLE);
-
-	GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_MEDIUM;
-	GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
-	GPIO_InitStruct.Pull = GPIO_NOPULL;
-	//CS pin
-	GPIO_InitStruct.Pin = MFRC522_CS_PIN;
-	GPIO_Init(MFRC522_CS_PORT, &GPIO_InitStruct);	
-
-	MFRC522_CS_HIGH;
-}
+//void TM_MFRC522_InitPins(void) {
+//	GPIO_InitTypeDef GPIO_InitStruct;
+//	//Enable clock
+//	RCC_AHB1PeriphClockCmd(MFRC522_CS_RCC, ENABLE);
+//
+//	GPIO_InitStruct.GPIO_Speed = GPIO_Speed_50MHz;
+//	GPIO_InitStruct.GPIO_Mode = GPIO_Mode_OUT;
+//	GPIO_InitStruct.GPIO_OType = GPIO_OType_PP;
+//	GPIO_InitStruct.GPIO_PuPd = GPIO_PuPd_NOPULL;
+//	//CS pin
+//	GPIO_InitStruct.GPIO_Pin = MFRC522_CS_PIN;
+//	GPIO_Init(MFRC522_CS_PORT, &GPIO_InitStruct);
+//
+//	MFRC522_CS_HIGH;
+//}
 
 void TM_MFRC522_WriteRegister(uint8_t addr, uint8_t val) {
+	uint8_t address = (addr << 1) & 0x7E;
+	uint8_t rx_buff[2] = {0, 0};
+	uint8_t tx_buff[2] = {address, val};
 	//CS low
 	MFRC522_CS_LOW;
 	//Send address
-	TM_SPI_Send(MFRC522_SPI, (addr << 1) & 0x7E);
+//	TM_SPI_Send(MFRC522_SPI, (addr << 1) & 0x7E);
+//	while(hspi_rfid->State == HAL_SPI_STATE_BUSY){}
+//	HAL_SPI_Transmit(hspi_rfid, &address, 1, 100);
+//	HAL_SPI_TransmitReceive(hspi_rfid, &address, &answer, 1, HAL_MAX_DELAY);
 	//Send data	
-	TM_SPI_Send(MFRC522_SPI, val);
+//	TM_SPI_Send(MFRC522_SPI, val);
+//	while(hspi_rfid->State == HAL_SPI_STATE_BUSY){}
+//	HAL_SPI_Transmit(hspi_rfid, &val, 1, 100);
+//	HAL_SPI_TransmitReceive(hspi_rfid, &val, &answer, 1, HAL_MAX_DELAY);
+	HAL_SPI_TransmitReceive(hspi_rfid, tx_buff, rx_buff, 2, HAL_MAX_DELAY);
+
+
 	//CS high
 	MFRC522_CS_HIGH;
 }
 
 uint8_t TM_MFRC522_ReadRegister(uint8_t addr) {
 	uint8_t val;
+//	uint8_t answer;
+	uint8_t address = (addr << 1) & 0x7E;
 	//CS low
 	MFRC522_CS_LOW;
 
-	TM_SPI_Send(MFRC522_SPI, ((addr << 1) & 0x7E) | 0x80);	
-	val = TM_SPI_Send(MFRC522_SPI, MFRC522_DUMMY);
+//	TM_SPI_Send(MFRC522_SPI, ((addr << 1) & 0x7E) | 0x80);
+	HAL_SPI_TransmitReceive(hspi_rfid, &address, &val, 1, HAL_MAX_DELAY);
+//	val = TM_SPI_Send(MFRC522_SPI, MFRC522_DUMMY);
 	//CS high
 	MFRC522_CS_HIGH;
 

@@ -64,11 +64,12 @@
 /**
  * Includes
  */
+#include "main.h"
 #include "stm32f4xx.h"
 //#include "stm32f4xx_rcc.h"
 //#include "stm32f4xx_gpio.h"
 //#include "tm_stm32f4_spi.h"
-#include "defines.h"
+//#include "defines.h"
 
 /**
  * Pinout
@@ -76,16 +77,16 @@
  * Can be overwritten in defines.h file
  */
 /* Default SPI used */
-#ifndef MFRC522_SPI
-#define MFRC522_SPI						SPI1
-#define MFRC522_SPI_PINSPACK			TM_SPI_PinsPack_2
-#endif
+//#ifndef MFRC522_SPI
+//#define MFRC522_SPI						SPI1
+//#define MFRC522_SPI_PINSPACK			TM_SPI_PinsPack_2
+//#endif
 
 /* Default CS pin used */
 #ifndef MFRC522_CS_PIN
-#define MFRC522_CS_RCC					1
-#define MFRC522_CS_PORT					GPIOA
-#define MFRC522_CS_PIN					GPIO_PIN_0
+#define MFRC522_CS_RCC					RCC_AHB1
+#define MFRC522_CS_PORT					RFID_SDA_GPIO_Port
+#define MFRC522_CS_PIN					RFID_SDA_Pin
 #endif
 
 /**
@@ -99,8 +100,8 @@ typedef enum {
 	MI_ERR
 } TM_MFRC522_Status_t;
 
-#define MFRC522_CS_LOW
-#define MFRC522_CS_HIGH					MFRC522_CS_PORT->BSRRL = MFRC522_CS_PIN;
+#define MFRC522_CS_LOW					HAL_GPIO_WritePin(RFID_SDA_GPIO_Port, RFID_SDA_Pin, GPIO_PIN_RESET)
+#define MFRC522_CS_HIGH					HAL_GPIO_WritePin(RFID_SDA_GPIO_Port, RFID_SDA_Pin, GPIO_PIN_SET)
 
 /* MFRC522 Commands */
 #define PCD_IDLE						0x00   //NO action; Cancel the current command
