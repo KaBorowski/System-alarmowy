@@ -10,7 +10,7 @@
 
 UserType userList[2];
 AuthorizationStatusType authorizationStatus;
-IntruderStatusType intruderStatus;
+
 
 void ALARM_Init(){
 	userList[0].card_id[0]= 30;
@@ -25,7 +25,6 @@ void ALARM_Init(){
 	userList[0].pass[3] = 4;
 
 	authorizationStatus = WAITING_FOR_CARD;
-	intruderStatus = UNDETECTED;
 	ALARM_KeyboardLocked();
 	BUZZER_OFF;
 	DOOR_LOCKED;

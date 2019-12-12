@@ -85,6 +85,10 @@ void Error_Handler(void);
 #define TCK_GPIO_Port GPIOA
 #define SWO_Pin GPIO_PIN_3
 #define SWO_GPIO_Port GPIOB
+#define SONAR_TRIG_Pin GPIO_PIN_4
+#define SONAR_TRIG_GPIO_Port GPIOB
+#define SONAR_ECHO_Pin GPIO_PIN_5
+#define SONAR_ECHO_GPIO_Port GPIOB
 #define LCD_SCL_Pin GPIO_PIN_6
 #define LCD_SCL_GPIO_Port GPIOB
 #define LCD_SDA_Pin GPIO_PIN_7

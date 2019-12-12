@@ -22,6 +22,7 @@
 #include "main.h"
 #include "i2c.h"
 #include "spi.h"
+#include "tim.h"
 #include "usart.h"
 #include "gpio.h"
 
@@ -30,6 +31,7 @@
 #include "rc552.h"
 #include "state_machine.h"
 #include "alarm.h"
+#include "sonar.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -111,8 +113,10 @@ int main(void)
   MX_SPI2_Init();
   MX_USART2_UART_Init();
   MX_I2C1_Init();
+  MX_TIM2_Init();
   /* USER CODE BEGIN 2 */
   MODULES_Init();
+  HAL_TIM_Base_Start_IT(&htim2);
   stateMachine.actualState = WAIT_FOR_CARD;
   /* USER CODE END 2 */
 

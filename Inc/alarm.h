@@ -33,11 +33,6 @@ typedef enum{
 	ACCESS_DENIED
 } AuthorizationStatusType;
 
-typedef enum{
-	UNDETECTED,
-	DETECTED
-} IntruderStatusType;
-
 extern void ALARM_Init();
 extern void ALARM_KeyboardLocked();
 extern void ALARM_KeyboardUnlocked();
