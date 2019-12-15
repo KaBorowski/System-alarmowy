@@ -37,8 +37,8 @@ void SONAR_count(){
 				sonarState = WAIT_FOR_ECHO;
 				SONAR_STOP_SENDING;
 			}
-			if (!HAL_GPIO_ReadPin(SONAR_TRIG_GPIO_Port, SONAR_TRIG_Pin &&
-					delay == SONAR_DELAY)){
+			if (!HAL_GPIO_ReadPin(SONAR_TRIG_GPIO_Port, SONAR_TRIG_Pin) &&
+					delay == SONAR_DELAY){
 				delay = 0;
 				counter = 0;
 				SONAR_SEND_SIGNAL;
