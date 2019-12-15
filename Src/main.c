@@ -28,10 +28,12 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include "string.h"
 #include "rc552.h"
 #include "state_machine.h"
 #include "alarm.h"
 #include "sonar.h"
+#include "keypad.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -135,12 +137,13 @@ int main(void)
 			}
 			card_status = MFRC522_Check(card_id);
 			switch (card_status) {
-				case MI_OK:
+				case MI_OK:	//CARD DETECTED
 					stateMachine.prevState = stateMachine.actualState;
 					stateMachine.actualState = WAIT_FOR_PIN;
-					ALARM_KeyboardUnlocked();
+					authorizationStatus = WAITING_FOR_PIN;
+					KEYPAD_UNLOCK;
 					break;
-				case MI_ERR:
+				case MI_ERR: //CARD UNDETECTED
 				default:
 					break;
 			}
@@ -158,14 +161,20 @@ int main(void)
 			//TODO: check flag if pin inserted if(PIN_PRESSED)
 			if (authorizationStatus == PIN_TYPED){
 				uint8_t user = 0;
+				authorizationStatus = ACCESS_DENIED;
 				for (int i=0; i<2; ++i){
 					user = MFRC522_Compare(card_id, userList[i].card_id);
 					if (user == MI_OK){
+//						if (strcmp(userList[i].pass, pin) == 0)	authorizationStatus = ACCESS_GRANTED;
+						authorizationStatus = ACCESS_GRANTED;
+						for (uint8_t j; j<PASSWORD_LENGTH; ++j){
+							if(userList[i].pass[j] != pin[j]) authorizationStatus = ACCESS_DENIED;
+						}
 						break;
 					}
 					//TODO: Add password check
 				}
-				if (user == MI_OK){//access granted
+				if (authorizationStatus == ACCESS_GRANTED){//access granted
 					if(stateMachine.armed && !stateMachine.intruder){
 						stateMachine.armed = FALSE;
 						DOOR_UNLOCKED;
@@ -178,19 +187,26 @@ int main(void)
 						stateMachine.armed = TRUE;
 						DOOR_LOCKED;
 					}
-					ALARM_KeyboardLocked();
+					KEYPAD_LOCK;
 					stateMachine.prevState = stateMachine.actualState;
 					stateMachine.actualState = WAIT_FOR_CARD;
+					authorizationStatus = WAITING_FOR_CARD;
 
 				}else{//TODO: wrong authorization
 					deny_counter++;
 					if (deny_counter >= DENY_MAX_AMOUNT){
 						//TODO: Block this card
-						ALARM_KeyboardLocked();
+						deny_counter = 0;
+						KEYPAD_LOCK;
 						stateMachine.prevState = stateMachine.actualState;
 						stateMachine.actualState = WAIT_FOR_CARD;
+						authorizationStatus = WAITING_FOR_CARD;
+					}
+					else{
+						authorizationStatus = WAITING_FOR_PIN;
 					}
 				}
+				KEYPAD_ResetCounter();
 			}
 
 			break;

@@ -18,11 +18,13 @@
 #define DOOR_LOCKED					HAL_GPIO_WritePin(DOOR_ENABLE_GPIO_Port, DOOR_ENABLE_Pin, GPIO_PIN_SET);
 #define BUZZER_ON					HAL_GPIO_WritePin(BUZZER_ENABLE_GPIO_Port, BUZZER_ENABLE_Pin, GPIO_PIN_SET);
 #define BUZZER_OFF					HAL_GPIO_WritePin(BUZZER_ENABLE_GPIO_Port, BUZZER_ENABLE_Pin, GPIO_PIN_RESET);
+#define KEYPAD_LOCK					HAL_NVIC_DisableIRQ(EXTI9_5_IRQn)
+#define KEYPAD_UNLOCK				HAL_NVIC_EnableIRQ(EXTI9_5_IRQn)
 
 
 typedef struct{
 	uint8_t card_id[MFRC522_MAX_LEN];
-	uint8_t pass[PASSWORD_LENGTH];
+	char pass[PASSWORD_LENGTH];
 }UserType;
 
 typedef enum{
@@ -37,6 +39,7 @@ extern void ALARM_Init();
 extern void ALARM_KeyboardLocked();
 extern void ALARM_KeyboardUnlocked();
 
+extern AuthorizationStatusType authorizationStatus;
 //extern
 //extern UserType userList[2];
 

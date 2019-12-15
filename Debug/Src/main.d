@@ -32,7 +32,7 @@ Src/main.o: ../Src/main.c ../Inc/main.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h ../Inc/i2c.h \
  ../Inc/main.h ../Inc/spi.h ../Inc/tim.h ../Inc/usart.h ../Inc/gpio.h \
  ../Inc/rc552.h ../Inc/state_machine.h ../Inc/alarm.h ../Inc/rc552.h \
- ../Inc/sonar.h
+ ../Inc/sonar.h ../Inc/keypad.h ../Inc/alarm.h
 
 ../Inc/main.h:
 
@@ -119,3 +119,7 @@ Src/main.o: ../Src/main.c ../Inc/main.h \
 ../Inc/rc552.h:
 
 ../Inc/sonar.h:
+
+../Inc/keypad.h:
+
+../Inc/alarm.h:

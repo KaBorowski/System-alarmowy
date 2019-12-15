@@ -18,17 +18,13 @@ typedef enum{
 	WAIT_FOR_PIN
 }StateMachineStatesType;
 
-typedef enum{
-	FALSE,
-	TRUE
-}FlagState;
 
 typedef struct{
 
 	StateMachineStatesType actualState;
 	StateMachineStatesType prevState;
-	FlagState intruder;
-	FlagState armed;
+	BoolType intruder;
+	BoolType armed;
 
 }StateMachine;
 

@@ -20,6 +20,7 @@
 "Src/alarm.o"
 "Src/gpio.o"
 "Src/i2c.o"
+"Src/keypad.o"
 "Src/main.o"
 "Src/rc552.o"
 "Src/sonar.o"
