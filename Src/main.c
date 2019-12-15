@@ -34,6 +34,7 @@
 #include "alarm.h"
 #include "sonar.h"
 #include "keypad.h"
+#include "flash.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -59,7 +60,7 @@ I2C_HandleTypeDef *hi2c1_lcd = &hi2c1;
 UART_HandleTypeDef *huart_admin = &huart2;
 
 extern StateMachine stateMachine;
-extern UserType userList[2];
+extern UserType userList[USERS_LIMIT];
 extern AuthorizationStatusType authorizationStatus;
 extern IntruderStatusType intruderStatus;
 
@@ -120,6 +121,7 @@ int main(void)
   MODULES_Init();
   HAL_TIM_Base_Start_IT(&htim2);
   stateMachine.actualState = WAIT_FOR_CARD;
+  HAL_Delay(1000);
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -167,7 +169,7 @@ int main(void)
 					if (user == MI_OK){
 //						if (strcmp(userList[i].pass, pin) == 0)	authorizationStatus = ACCESS_GRANTED;
 						authorizationStatus = ACCESS_GRANTED;
-						for (uint8_t j; j<PASSWORD_LENGTH; ++j){
+						for (uint8_t j=0; j<PASSWORD_LENGTH; ++j){
 							if(userList[i].pass[j] != pin[j]) authorizationStatus = ACCESS_DENIED;
 						}
 						break;
