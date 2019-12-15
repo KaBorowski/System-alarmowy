@@ -21,7 +21,7 @@ static void countDistance(uint32_t time);
 static uint32_t counter;
 static uint32_t delay;
 static SonarStateType sonarState;
-static uint8_t distance;
+static uint8_t distance = 200;
 
 void SONAR_count(){
 	counter++;
