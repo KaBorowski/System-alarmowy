@@ -131,7 +131,7 @@ int main(void)
 	switch(stateMachine.actualState){
 		case WAIT_FOR_CARD:{
 			//TODO: detected intruder by sensor
-			if (!stateMachine.intruder && intruderStatus == DETECTED){
+			if (!stateMachine.intruder && intruderStatus == DETECTED && stateMachine.armed){
 				stateMachine.intruder = TRUE;
 				BUZZER_ON;
 			}
@@ -153,7 +153,7 @@ int main(void)
 		}
 		case WAIT_FOR_PIN:{
 			//TODO: detected intruder by sensor
-			if (!stateMachine.intruder && intruderStatus == DETECTED){
+			if (!stateMachine.intruder && intruderStatus == DETECTED && stateMachine.armed){
 				stateMachine.intruder = TRUE;
 				BUZZER_ON;
 			}

@@ -19,15 +19,8 @@
 #define SONAR_STOP_SENDING				HAL_GPIO_WritePin(SONAR_TRIG_GPIO_Port, SONAR_TRIG_Pin, GPIO_PIN_RESET)
 //#define SONAR_ECHO_STATE
 
-#define SONAR_INTRUDER_DETECTION		10
+#define SONAR_INTRUDER_DETECTION		100
 
-
-typedef enum{
-	UNDETECTED,
-	DETECTED
-} IntruderStatusType;
-
-extern IntruderStatusType intruderStatus;
 
 void SONAR_count();
 
