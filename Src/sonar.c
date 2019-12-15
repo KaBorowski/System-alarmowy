@@ -7,14 +7,13 @@
 
 
 #include "sonar.h"
+#include "alarm.h"
 
 typedef enum{
 	SENDING_IMPULS,
 	WAIT_FOR_ECHO,
 	COUNT_ECHO_TIME
 }SonarStateType;
-
-IntruderStatusType intruderStatus = UNDETECTED;
 
 static void checkIfIntruder();
 static void countDistance(uint32_t time);
