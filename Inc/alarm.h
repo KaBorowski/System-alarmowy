@@ -13,6 +13,10 @@
 
 #define DENY_MAX_AMOUNT				5
 #define PASSWORD_LENGTH				4
+#define ID_LENGTH					5
+
+#define USERS_LIMIT					10
+#define FLASH_DATA_SIZE				USERS_LIMIT*(PASSWORD_LENGTH+ID_LENGTH)
 
 #define DOOR_UNLOCKED				HAL_GPIO_WritePin(DOOR_ENABLE_GPIO_Port, DOOR_ENABLE_Pin, GPIO_PIN_RESET);
 #define DOOR_LOCKED					HAL_GPIO_WritePin(DOOR_ENABLE_GPIO_Port, DOOR_ENABLE_Pin, GPIO_PIN_SET);
@@ -23,7 +27,7 @@
 
 
 typedef struct{
-	uint8_t card_id[MFRC522_MAX_LEN];
+	uint8_t card_id[ID_LENGTH];
 	char pass[PASSWORD_LENGTH];
 }UserType;
 
@@ -46,7 +50,7 @@ extern void ALARM_KeyboardUnlocked();
 
 extern AuthorizationStatusType authorizationStatus;
 extern IntruderStatusType intruderStatus;
-extern UserType userList[2];
+extern UserType userList[USERS_LIMIT];
 
 
 #endif /* ALARM_H_ */
