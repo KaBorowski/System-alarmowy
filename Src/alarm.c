@@ -10,7 +10,7 @@
 
 UserType userList[2];
 AuthorizationStatusType authorizationStatus;
-IntruderStatusType intruderStatus;
+
 
 void ALARM_Init(){
 	userList[0].card_id[0]= 30;
@@ -19,24 +19,15 @@ void ALARM_Init(){
 	userList[0].card_id[3]= 203;
 	userList[0].card_id[4]= 68;
 
-	userList[0].pass[0] = 1;
-	userList[0].pass[1] = 2;
-	userList[0].pass[2] = 3;
-	userList[0].pass[3] = 4;
+	userList[0].pass[0] = '1';
+	userList[0].pass[1] = '2';
+	userList[0].pass[2] = '3';
+	userList[0].pass[3] = '4';
 
 	authorizationStatus = WAITING_FOR_CARD;
-	intruderStatus = UNDETECTED;
-	ALARM_KeyboardLocked();
+	KEYPAD_LOCK;
 	BUZZER_OFF;
 	DOOR_LOCKED;
 }
 
 
-
-void ALARM_KeyboardLocked(){
-
-}
-
-void ALARM_KeyboardUnlocked(){
-
-}
