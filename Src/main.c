@@ -35,6 +35,7 @@
 #include "sonar.h"
 #include "keypad.h"
 #include "flash.h"
+#include "lcd.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -56,7 +57,8 @@
 
 /* USER CODE BEGIN PV */
 SPI_HandleTypeDef *hspi_rfid = &hspi2;
-I2C_HandleTypeDef *hi2c1_lcd = &hi2c1;
+//I2C_HandleTypeDef *hi2c1_lcd = &hi2c1;
+I2C_HandleTypeDef hi2c1;
 UART_HandleTypeDef *huart_admin = &huart2;
 
 extern StateMachine stateMachine;
@@ -122,6 +124,8 @@ int main(void)
   HAL_TIM_Base_Start_IT(&htim2);
   stateMachine.actualState = WAIT_FOR_CARD;
   HAL_Delay(1000);
+  LCD_Print_X_Y(0, 0, "Test Systemu");
+  LCD_Print_X_Y(1, 0, "Alarmowego");
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -136,6 +140,9 @@ int main(void)
 			if (!stateMachine.intruder && intruderStatus == DETECTED && stateMachine.armed){
 				stateMachine.intruder = TRUE;
 				BUZZER_ON;
+				LCD_Clear();
+				LCD_Print_X_Y(0, 0, "ALARM ACTIVATED!");
+				LCD_Print_X_Y(1, 0, "INTRUDER!");
 			}
 			card_status = MFRC522_Check(card_id);
 			switch (card_status) {
@@ -144,8 +151,14 @@ int main(void)
 					stateMachine.actualState = WAIT_FOR_PIN;
 					authorizationStatus = WAITING_FOR_PIN;
 					KEYPAD_UNLOCK;
+					LCD_Clear();
+					LCD_Print_X_Y(0, 0, "Card detected");
+					LCD_Print_X_Y(1, 0, "correctly");
 					break;
 				case MI_ERR: //CARD UNDETECTED
+//					LCD_Clear();
+//					LCD_Print_X_Y(0, 0, "Error!");
+//					LCD_Print_X_Y(1, 0, "Card Undetected");
 				default:
 					break;
 			}
@@ -158,6 +171,9 @@ int main(void)
 			if (!stateMachine.intruder && intruderStatus == DETECTED && stateMachine.armed){
 				stateMachine.intruder = TRUE;
 				BUZZER_ON;
+				LCD_Clear();
+				LCD_Print_X_Y(0, 0, "ALARM ACTIVATED!");
+				LCD_Print_X_Y(1, 0, "INTRUDER!");
 			}
 
 			//TODO: check flag if pin inserted if(PIN_PRESSED)
@@ -169,10 +185,13 @@ int main(void)
 					if (user == MI_OK){
 //						if (strcmp(userList[i].pass, pin) == 0)	authorizationStatus = ACCESS_GRANTED;
 						authorizationStatus = ACCESS_GRANTED;
+						LCD_Clear();
+						LCD_Print_X_Y(0, 0, "ACCESS_GRANTED");
 						for (uint8_t j=0; j<PASSWORD_LENGTH; ++j){
 							if(userList[i].pass[j] != pin[j]) authorizationStatus = ACCESS_DENIED;
+
 						}
-						break;
+
 					}
 					//TODO: Add password check
 				}
@@ -206,6 +225,10 @@ int main(void)
 					}
 					else{
 						authorizationStatus = WAITING_FOR_PIN;
+						LCD_Clear();
+						LCD_Print_X_Y(0, 0, "ACCESS_DENIED");
+						LCD_Print_X_Y(1, 0, "ENTER PIN AGAIN");
+						break;
 					}
 				}
 				KEYPAD_ResetCounter();
@@ -274,6 +297,7 @@ static void MODULES_Init(){
 	STATEMACHINE_Init();
 	MFRC522_Init();
 	ALARM_Init();
+	LCD_Init();
 
 }
 
