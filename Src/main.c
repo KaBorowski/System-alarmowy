@@ -28,14 +28,11 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "string.h"
-#include "rc552.h"
-#include "state_machine.h"
 #include "alarm.h"
 #include "sonar.h"
-#include "keypad.h"
-#include "flash.h"
 #include "lcd.h"
+#include "state_machine.h"
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -60,18 +57,6 @@ SPI_HandleTypeDef *hspi_rfid = &hspi2;
 //I2C_HandleTypeDef *hi2c1_lcd = &hi2c1;
 I2C_HandleTypeDef hi2c1;
 UART_HandleTypeDef *huart_admin = &huart2;
-
-extern StateMachine stateMachine;
-extern UserType userList[USERS_LIMIT];
-extern AuthorizationStatusType authorizationStatus;
-extern IntruderStatusType intruderStatus;
-
-uint8_t card_status;
-uint8_t card_id[MFRC522_MAX_LEN];
-uint8_t deny_counter = 0;
-
-
-
 
 /* USER CODE END PV */
 
@@ -122,10 +107,8 @@ int main(void)
   /* USER CODE BEGIN 2 */
   MODULES_Init();
   HAL_TIM_Base_Start_IT(&htim2);
-  stateMachine.actualState = WAIT_FOR_CARD;
+
   HAL_Delay(1000);
-  LCD_Print_X_Y(0, 0, "Test Systemu");
-  LCD_Print_X_Y(1, 0, "Alarmowego");
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -133,107 +116,14 @@ int main(void)
 
   while (1)
   {
-
+	ALARM_CheckIfIntruderDetected();
 	switch(stateMachine.actualState){
 		case WAIT_FOR_CARD:{
-			//TODO: detected intruder by sensor
-			if (!stateMachine.intruder && intruderStatus == DETECTED && stateMachine.armed){
-				stateMachine.intruder = TRUE;
-				BUZZER_ON;
-				LCD_Clear();
-				LCD_Print_X_Y(0, 0, "ALARM ACTIVATED!");
-				LCD_Print_X_Y(1, 0, "INTRUDER!");
-			}
-			card_status = MFRC522_Check(card_id);
-			switch (card_status) {
-				case MI_OK:	//CARD DETECTED
-					stateMachine.prevState = stateMachine.actualState;
-					stateMachine.actualState = WAIT_FOR_PIN;
-					authorizationStatus = WAITING_FOR_PIN;
-					KEYPAD_UNLOCK;
-					LCD_Clear();
-					LCD_Print_X_Y(0, 0, "Card detected");
-					LCD_Print_X_Y(1, 0, "correctly");
-					break;
-				case MI_ERR: //CARD UNDETECTED
-//					LCD_Clear();
-//					LCD_Print_X_Y(0, 0, "Error!");
-//					LCD_Print_X_Y(1, 0, "Card Undetected");
-				default:
-					break;
-			}
-
-
+			ALARM_CheckIfCardDetected();
 			break;
 		}
 		case WAIT_FOR_PIN:{
-			//TODO: detected intruder by sensor
-			if (!stateMachine.intruder && intruderStatus == DETECTED && stateMachine.armed){
-				stateMachine.intruder = TRUE;
-				BUZZER_ON;
-				LCD_Clear();
-				LCD_Print_X_Y(0, 0, "ALARM ACTIVATED!");
-				LCD_Print_X_Y(1, 0, "INTRUDER!");
-			}
-
-			//TODO: check flag if pin inserted if(PIN_PRESSED)
-			if (authorizationStatus == PIN_TYPED){
-				uint8_t user = 0;
-				authorizationStatus = ACCESS_DENIED;
-				for (int i=0; i<2; ++i){
-					user = MFRC522_Compare(card_id, userList[i].card_id);
-					if (user == MI_OK){
-//						if (strcmp(userList[i].pass, pin) == 0)	authorizationStatus = ACCESS_GRANTED;
-						authorizationStatus = ACCESS_GRANTED;
-						LCD_Clear();
-						LCD_Print_X_Y(0, 0, "ACCESS_GRANTED");
-						for (uint8_t j=0; j<PASSWORD_LENGTH; ++j){
-							if(userList[i].pass[j] != pin[j]) authorizationStatus = ACCESS_DENIED;
-
-						}
-
-					}
-					//TODO: Add password check
-				}
-				if (authorizationStatus == ACCESS_GRANTED){//access granted
-					if(stateMachine.armed && !stateMachine.intruder){
-						stateMachine.armed = FALSE;
-						DOOR_UNLOCKED;
-					}
-					else if(stateMachine.armed && stateMachine.intruder){
-						stateMachine.intruder = FALSE;
-						BUZZER_OFF;
-					}
-					else if(!stateMachine.armed){
-						stateMachine.armed = TRUE;
-						DOOR_LOCKED;
-					}
-					KEYPAD_LOCK;
-					stateMachine.prevState = stateMachine.actualState;
-					stateMachine.actualState = WAIT_FOR_CARD;
-					authorizationStatus = WAITING_FOR_CARD;
-
-				}else{//TODO: wrong authorization
-					deny_counter++;
-					if (deny_counter >= DENY_MAX_AMOUNT){
-						//TODO: Block this card
-						deny_counter = 0;
-						KEYPAD_LOCK;
-						stateMachine.prevState = stateMachine.actualState;
-						stateMachine.actualState = WAIT_FOR_CARD;
-						authorizationStatus = WAITING_FOR_CARD;
-					}
-					else{
-						authorizationStatus = WAITING_FOR_PIN;
-						LCD_Clear();
-						LCD_Print_X_Y(0, 0, "ACCESS_DENIED");
-						LCD_Print_X_Y(1, 0, "ENTER PIN AGAIN");
-						break;
-					}
-				}
-				KEYPAD_ResetCounter();
-			}
-
+			ALARM_CheckIfPinCorrect();
 			break;
 		}
 		default:{

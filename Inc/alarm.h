@@ -45,8 +45,9 @@ typedef enum{
 } IntruderStatusType;
 
 extern void ALARM_Init();
-extern void ALARM_KeyboardLocked();
-extern void ALARM_KeyboardUnlocked();
+extern void ALARM_CheckIfIntruderDetected();
+void ALARM_CheckIfCardDetected();
+void ALARM_CheckIfPinCorrect();
 
 extern AuthorizationStatusType authorizationStatus;
 extern IntruderStatusType intruderStatus;
