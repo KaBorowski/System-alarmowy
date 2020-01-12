@@ -15,7 +15,7 @@
 #include "lcd.h"
 
 
-//#define USERS_INIT
+#define USERS_INIT
 
 static void usersInit();
 
@@ -87,7 +87,7 @@ void ALARM_CheckIfCardDetected(){
 			KEYPAD_UNLOCK;
 			LCD_Clear();
 			LCD_Print_X_Y(0, 0, "Card detected");
-			LCD_Print_X_Y(1, 0, "correctly");
+			LCD_Print_X_Y(1, 0, "Password: ");
 			break;
 		case MI_ERR: //CARD UNDETECTED
 //					LCD_Clear();

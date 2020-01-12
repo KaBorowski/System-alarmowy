@@ -53,7 +53,7 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-SPI_HandleTypeDef *hspi_rfid = &hspi2;
+SPI_HandleTypeDef *hspi_rfid = &hspi1;
 //I2C_HandleTypeDef *hi2c1_lcd = &hi2c1;
 I2C_HandleTypeDef hi2c1;
 UART_HandleTypeDef *huart_admin = &huart2;
@@ -100,10 +100,10 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
-  MX_SPI2_Init();
   MX_USART2_UART_Init();
   MX_I2C1_Init();
   MX_TIM2_Init();
+  MX_SPI1_Init();
   /* USER CODE BEGIN 2 */
   MODULES_Init();
   HAL_TIM_Base_Start_IT(&htim2);
