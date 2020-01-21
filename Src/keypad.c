@@ -7,6 +7,7 @@
 
 
 #include "keypad.h"
+#include "lcd.h"
 
 
 //***** Library variables *****//
@@ -40,19 +41,19 @@ char KEYPAD_ReadKey(uint16_t GPIO_Pin)
 		pressCounter++;
 
 		/* Check in which row is clicked button */
-		HAL_GPIO_WritePin (KEYPAD_ROW_PORT, KEY_R1_Pin, GPIO_PIN_SET);
+		HAL_GPIO_WritePin (KEY_R1_GPIO_Port, KEY_R1_Pin, GPIO_PIN_SET);
 
 		if (HAL_GPIO_ReadPin (KEYPAD_COLUMN_PORT, GPIO_Pin))		row = R1;
 		if(row == NONE){
-			HAL_GPIO_WritePin (KEYPAD_ROW_PORT, KEY_R2_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin (KEY_R2_GPIO_Port, KEY_R2_Pin, GPIO_PIN_SET);
 			if (HAL_GPIO_ReadPin (KEYPAD_COLUMN_PORT, GPIO_Pin))	row = R2;
 		}
 		if (row == NONE){
-			HAL_GPIO_WritePin (KEYPAD_ROW_PORT, KEY_R3_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin (KEY_R3_GPIO_Port, KEY_R3_Pin, GPIO_PIN_SET);
 			if (HAL_GPIO_ReadPin (KEYPAD_COLUMN_PORT, GPIO_Pin))	row = R3;
 		}
 		if (row == NONE){
-			HAL_GPIO_WritePin (KEYPAD_ROW_PORT, KEY_R4_Pin, GPIO_PIN_SET);
+			HAL_GPIO_WritePin (KEY_R4_GPIO_Port, KEY_R4_Pin, GPIO_PIN_SET);
 			if (HAL_GPIO_ReadPin (KEYPAD_COLUMN_PORT, GPIO_Pin))	row = R4;
 		}
 		resetRows();
@@ -133,7 +134,10 @@ void KEYPAD_EXTI_Callback(uint16_t GPIO_Pin){
 			}
 		}
 
-		if (isPressed == TRUE)	pin[pressCounter-1] = (char)key;
+		if (isPressed == TRUE)	{
+			pin[pressCounter-1] = (char)key;
+			LCD_Print_X_Y(1, pressCounter+9, "*");
+		}
 
 		if (pressCounter >= PASSWORD_LENGTH) {
 			pressCounter = 0;
@@ -147,8 +151,8 @@ void KEYPAD_ResetCounter(){
 
 void static resetRows()
 {
-	HAL_GPIO_WritePin (KEYPAD_ROW_PORT, KEY_R1_Pin, GPIO_PIN_RESET);
-	HAL_GPIO_WritePin (KEYPAD_ROW_PORT, KEY_R2_Pin, GPIO_PIN_RESET);
-	HAL_GPIO_WritePin (KEYPAD_ROW_PORT, KEY_R3_Pin, GPIO_PIN_RESET);
-	HAL_GPIO_WritePin (KEYPAD_ROW_PORT, KEY_R4_Pin, GPIO_PIN_RESET);
+	HAL_GPIO_WritePin (KEY_R1_GPIO_Port, KEY_R1_Pin, GPIO_PIN_RESET);
+	HAL_GPIO_WritePin (KEY_R2_GPIO_Port, KEY_R2_Pin, GPIO_PIN_RESET);
+	HAL_GPIO_WritePin (KEY_R3_GPIO_Port, KEY_R3_Pin, GPIO_PIN_RESET);
+	HAL_GPIO_WritePin (KEY_R4_GPIO_Port, KEY_R4_Pin, GPIO_PIN_RESET);
 }

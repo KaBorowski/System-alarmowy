@@ -33,7 +33,14 @@ extern "C" {
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+typedef enum{
+	IDLE,
+	SENDING,
+	SENT,
+	RECEIVING,
+	RECEIVED,
+	NOT_RESPONSE
+} TransmissionStatus;
 /* USER CODE END Includes */
 
 /* Exported types ------------------------------------------------------------*/
@@ -61,42 +68,39 @@ void Error_Handler(void);
 /* Private defines -----------------------------------------------------------*/
 #define B1_Pin GPIO_PIN_13
 #define B1_GPIO_Port GPIOC
-#define B1_EXTI_IRQn EXTI15_10_IRQn
-#define DOOR_ENABLE_Pin GPIO_PIN_0
-#define DOOR_ENABLE_GPIO_Port GPIOC
-#define BUZZER_ENABLE_Pin GPIO_PIN_1
-#define BUZZER_ENABLE_GPIO_Port GPIOC
-#define KEY_R1_Pin GPIO_PIN_2
-#define KEY_R1_GPIO_Port GPIOC
-#define KEY_R2_Pin GPIO_PIN_3
+#define KEY_R2_Pin GPIO_PIN_0
 #define KEY_R2_GPIO_Port GPIOC
+#define KEY_R3_Pin GPIO_PIN_1
+#define KEY_R3_GPIO_Port GPIOC
+#define KEY_C3_Pin GPIO_PIN_0
+#define KEY_C3_GPIO_Port GPIOA
+#define KEY_C3_EXTI_IRQn EXTI0_IRQn
+#define KEY_C2_Pin GPIO_PIN_1
+#define KEY_C2_GPIO_Port GPIOA
+#define KEY_C2_EXTI_IRQn EXTI1_IRQn
 #define USART_TX_Pin GPIO_PIN_2
 #define USART_TX_GPIO_Port GPIOA
 #define USART_RX_Pin GPIO_PIN_3
 #define USART_RX_GPIO_Port GPIOA
-#define LD2_Pin GPIO_PIN_5
-#define LD2_GPIO_Port GPIOA
-#define KEY_R3_Pin GPIO_PIN_4
-#define KEY_R3_GPIO_Port GPIOC
-#define KEY_R4_Pin GPIO_PIN_5
-#define KEY_R4_GPIO_Port GPIOC
-#define RFID_SDA_Pin GPIO_PIN_1
-#define RFID_SDA_GPIO_Port GPIOB
-#define RDIF_SCK_Pin GPIO_PIN_13
-#define RDIF_SCK_GPIO_Port GPIOB
-#define RFID_MISO_Pin GPIO_PIN_14
-#define RFID_MISO_GPIO_Port GPIOB
-#define RFID_MOSI_Pin GPIO_PIN_15
-#define RFID_MOSI_GPIO_Port GPIOB
-#define KEY_C1_Pin GPIO_PIN_6
-#define KEY_C1_GPIO_Port GPIOC
-#define KEY_C1_EXTI_IRQn EXTI9_5_IRQn
-#define KEY_C2_Pin GPIO_PIN_7
-#define KEY_C2_GPIO_Port GPIOC
-#define KEY_C2_EXTI_IRQn EXTI9_5_IRQn
-#define KEY_C3_Pin GPIO_PIN_8
-#define KEY_C3_GPIO_Port GPIOC
-#define KEY_C3_EXTI_IRQn EXTI9_5_IRQn
+#define KEY_C1_Pin GPIO_PIN_4
+#define KEY_C1_GPIO_Port GPIOA
+#define KEY_C1_EXTI_IRQn EXTI4_IRQn
+#define RFID_SCK_Pin GPIO_PIN_5
+#define RFID_SCK_GPIO_Port GPIOA
+#define RFID_MISO_Pin GPIO_PIN_6
+#define RFID_MISO_GPIO_Port GPIOA
+#define RFID_MOSI_Pin GPIO_PIN_7
+#define RFID_MOSI_GPIO_Port GPIOA
+#define KEY_R4_Pin GPIO_PIN_0
+#define KEY_R4_GPIO_Port GPIOB
+#define KEY_R1_Pin GPIO_PIN_10
+#define KEY_R1_GPIO_Port GPIOB
+#define RFID_SDA_Pin GPIO_PIN_8
+#define RFID_SDA_GPIO_Port GPIOA
+#define DOOR_ENABLE_Pin GPIO_PIN_9
+#define DOOR_ENABLE_GPIO_Port GPIOA
+#define BUZZER_ENABLE_Pin GPIO_PIN_10
+#define BUZZER_ENABLE_GPIO_Port GPIOA
 #define TMS_Pin GPIO_PIN_13
 #define TMS_GPIO_Port GPIOA
 #define TCK_Pin GPIO_PIN_14

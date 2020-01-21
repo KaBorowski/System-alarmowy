@@ -1,7 +1,7 @@
 [PreviousGenFiles]
-HeaderPath=C:/Users/Sajmon/STM32CubeIDE/workspace_1.1.0/System-alarmowy/Inc
+HeaderPath=C:/Users/Boro/STM32CubeIDE/workspace_1.0.2/System-alarmowy/Inc
 HeaderFiles=stm32f4xx_it.h;stm32f4xx_hal_conf.h;main.h;gpio.h;i2c.h;spi.h;usart.h;tim.h;sys.h;
-SourcePath=C:/Users/Sajmon/STM32CubeIDE/workspace_1.1.0/System-alarmowy/Src
+SourcePath=C:/Users/Boro/STM32CubeIDE/workspace_1.0.2/System-alarmowy/Src
 SourceFiles=stm32f4xx_it.c;stm32f4xx_hal_msp.c;main.c;gpio.c;i2c.c;spi.c;usart.c;tim.c;sys.c;
 
 [PreviousLibFiles]
