@@ -32,6 +32,7 @@
 #include "sonar.h"
 #include "lcd.h"
 #include "state_machine.h"
+#include "admin.h"
 
 /* USER CODE END Includes */
 
@@ -56,7 +57,6 @@
 SPI_HandleTypeDef *hspi_rfid = &hspi1;
 //I2C_HandleTypeDef *hi2c1_lcd = &hi2c1;
 I2C_HandleTypeDef hi2c1;
-UART_HandleTypeDef *huart_admin = &huart2;
 
 /* USER CODE END PV */
 
@@ -116,7 +116,8 @@ int main(void)
 
   while (1)
   {
-	ALARM_CheckIfIntruderDetected();
+	ALARM_CheckIfAdminOperation();
+	if (stateMachine.actualState != ADMIN_OPERATION) ALARM_CheckIfIntruderDetected();
 	switch(stateMachine.actualState){
 		case WAIT_FOR_CARD:{
 			ALARM_CheckIfCardDetected();
@@ -124,6 +125,9 @@ int main(void)
 		}
 		case WAIT_FOR_PIN:{
 			ALARM_CheckIfPinCorrect();
+			break;
+		}
+		case ADMIN_OPERATION:{
 			break;
 		}
 		default:{
@@ -188,7 +192,7 @@ static void MODULES_Init(){
 	MFRC522_Init();
 	ALARM_Init();
 	LCD_Init();
-
+	ADMIN_Init();
 }
 
 /* USER CODE END 4 */

@@ -33,7 +33,14 @@ extern "C" {
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+typedef enum{
+	IDLE,
+	SENDING,
+	SENT,
+	RECEIVING,
+	RECEIVED,
+	NOT_RESPONSE
+} TransmissionStatus;
 /* USER CODE END Includes */
 
 /* Exported types ------------------------------------------------------------*/
