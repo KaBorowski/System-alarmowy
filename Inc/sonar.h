@@ -20,6 +20,7 @@
 //#define SONAR_ECHO_STATE
 
 #define SONAR_INTRUDER_DETECTION		100
+#define SONAR_DETECTION_VALUE			10
 
 
 void SONAR_count();

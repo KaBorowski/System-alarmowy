@@ -25,14 +25,20 @@
 #define KEYPAD_LOCK					HAL_NVIC_DisableIRQ(EXTI9_5_IRQn)
 #define KEYPAD_UNLOCK				HAL_NVIC_EnableIRQ(EXTI9_5_IRQn)
 
+#define SUCCESS						1
+#define FAILURE						0
 
+#define NO_USER						255
+
+//TODO: Card status
 typedef struct{
 	uint8_t card_id[ID_LENGTH];
 	char pass[PASSWORD_LENGTH];
+	BoolType isActive;
 }UserType;
 
 typedef enum{
-	WAITING_FOR_CARD,
+	WAITING_FOR_CARD = 0,
 	WAITING_FOR_PIN,
 	PIN_TYPED,
 	ACCESS_GRANTED,
@@ -44,10 +50,13 @@ typedef enum{
 	DETECTED
 } IntruderStatusType;
 
+typedef uint8_t OperationResult;
+
 extern void ALARM_Init();
 extern void ALARM_CheckIfIntruderDetected();
-void ALARM_CheckIfCardDetected();
-void ALARM_CheckIfPinCorrect();
+extern void ALARM_CheckIfCardDetected();
+extern void ALARM_CheckIfPinCorrect();
+extern void ALARM_CheckIfAdminOperation();
 
 extern AuthorizationStatusType authorizationStatus;
 extern IntruderStatusType intruderStatus;

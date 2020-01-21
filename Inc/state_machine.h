@@ -15,9 +15,9 @@
 typedef enum{
 	INIT = 0,
 	WAIT_FOR_CARD,
-	WAIT_FOR_PIN
+	WAIT_FOR_PIN,
+	ADMIN_OPERATION
 }StateMachineStatesType;
-
 
 typedef struct{
 

@@ -22,6 +22,7 @@ static uint32_t counter;
 static uint32_t delay;
 static SonarStateType sonarState;
 static uint8_t distance = 200;
+static uint8_t impulsCounter = 0;
 
 void SONAR_count(){
 	counter++;
@@ -71,8 +72,17 @@ void SONAR_count(){
 }
 
 static void checkIfIntruder(){
-	if (distance <= SONAR_INTRUDER_DETECTION)	intruderStatus = DETECTED;
-	else intruderStatus = UNDETECTED;
+	if (distance <= SONAR_INTRUDER_DETECTION){
+		++impulsCounter;
+		if (impulsCounter >= SONAR_DETECTION_VALUE){
+			impulsCounter = 0;
+			intruderStatus = DETECTED;
+		}
+	}
+	else {
+		impulsCounter = 0;
+		intruderStatus = UNDETECTED;
+	}
 }
 
 static void countDistance(uint32_t time){
