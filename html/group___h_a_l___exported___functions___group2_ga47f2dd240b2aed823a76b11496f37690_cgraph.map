@@ -1,0 +1,6 @@
+<map id="HAL_SetTickFreq" name="HAL_SetTickFreq">
+<area shape="rect" id="node1" title="Set new tick Freq." alt="" coords="5,31,129,57"/>
+<area shape="rect" id="node2" href="$group___h_a_l___exported___functions___group1.html#ga44d1542f9985b2243b14a41070cc41cc" title="This function configures the source of the time base. The time source is configured to have 1ms time ..." alt="" coords="177,31,272,57"/>
+<area shape="rect" id="node3" href="$group___c_o_r_t_e_x___exported___functions___group1.html#ga8581a82025a4780efd00876a66e3e91b" title=" " alt="" coords="320,5,472,32"/>
+<area shape="rect" id="node4" href="$group___c_o_r_t_e_x___exported___functions___group1.html#gac3a3f0d53c315523a8e6e7bcac1940cf" title=" " alt="" coords="320,56,472,83"/>
+</map>

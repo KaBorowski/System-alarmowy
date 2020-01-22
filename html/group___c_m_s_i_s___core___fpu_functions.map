@@ -1,0 +1,6 @@
+<map id="FPU Functions" name="FPU Functions">
+<area shape="rect" id="node1" href="$group___c_m_s_i_s___core___s_a_u_functions.html" title="Functions that configure the SAU." alt="" coords="329,5,439,31"/>
+<area shape="rect" id="node2" href="$group___c_m_s_i_s___core___n_v_i_c_functions.html" title="Functions that manage interrupts and exceptions via the NVIC." alt="" coords="5,31,119,56"/>
+<area shape="rect" id="node3" title="Function that provides FPU type." alt="" coords="167,31,276,56"/>
+<area shape="rect" id="node4" href="$group___c_m_s_i_s___core___cache_functions.html" title="Functions that configure Instruction and Data cache." alt="" coords="324,55,444,80"/>
+</map>

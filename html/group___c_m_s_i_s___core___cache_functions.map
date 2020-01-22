@@ -1,0 +1,5 @@
+<map id="Cache Functions" name="Cache Functions">
+<area shape="rect" id="node1" href="$group___c_m_s_i_s___core___fpu_functions.html" title="Function that provides FPU type." alt="" coords="5,5,115,31"/>
+<area shape="rect" id="node2" title="Functions that configure Instruction and Data cache." alt="" coords="163,5,283,31"/>
+<area shape="rect" id="node3" href="$group___c_m_s_i_s___core___sys_tick_functions.html" title="Functions that configure the System." alt="" coords="331,5,461,31"/>
+</map>

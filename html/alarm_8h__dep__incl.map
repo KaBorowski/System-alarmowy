@@ -1,0 +1,14 @@
+<map id="Inc/alarm.h" name="Inc/alarm.h">
+<area shape="rect" id="node1" title=" " alt="" coords="375,5,461,32"/>
+<area shape="rect" id="node2" href="$admin_8h.html" title=" " alt="" coords="447,80,536,107"/>
+<area shape="rect" id="node4" href="$alarm_8c.html" title=" " alt="" coords="113,155,203,181"/>
+<area shape="rect" id="node5" href="$main_8c.html" title=": Main program body" alt="" coords="683,155,769,181"/>
+<area shape="rect" id="node7" href="$flash_8h.html" title=" " alt="" coords="117,80,199,107"/>
+<area shape="rect" id="node9" href="$keypad_8h.html" title=" " alt="" coords="297,80,393,107"/>
+<area shape="rect" id="node12" href="$sonar_8c.html" title=" " alt="" coords="612,80,701,107"/>
+<area shape="rect" id="node3" href="$admin_8c.html" title=" " alt="" coords="567,155,659,181"/>
+<area shape="rect" id="node6" href="$usart_8c.html" title=" " alt="" coords="456,155,543,181"/>
+<area shape="rect" id="node8" href="$flash_8c.html" title=" " alt="" coords="5,155,89,181"/>
+<area shape="rect" id="node10" href="$gpio_8c.html" title=" " alt="" coords="351,155,432,181"/>
+<area shape="rect" id="node11" href="$keypad_8c.html" title=" " alt="" coords="227,155,326,181"/>
+</map>

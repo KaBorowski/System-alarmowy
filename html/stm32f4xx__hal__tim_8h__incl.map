@@ -1,0 +1,8 @@
+<map id="Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h" name="Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h">
+<area shape="rect" id="node1" title="Header file of TIM HAL module." alt="" coords="131,5,298,61"/>
+<area shape="rect" id="node2" href="$stm32f4xx__hal__def_8h.html" title="This file contains HAL common defines, enumeration, macros and structures definitions." alt="" coords="144,184,285,211"/>
+<area shape="rect" id="node6" href="$stm32f4xx__hal__tim__ex_8h.html" title="Header file of TIM HAL Extended module." alt="" coords="193,109,356,136"/>
+<area shape="rect" id="node3" href="$stm32f4xx_8h.html" title="CMSIS STM32F4xx Device Peripheral Access Layer Header File." alt="" coords="5,259,99,285"/>
+<area shape="rect" id="node4" href="$stm32__hal__legacy_8h.html" title="This file contains aliases definition for the STM32Cube HAL constants macros and functions maintained..." alt="" coords="123,259,307,285"/>
+<area shape="rect" id="node5" title=" " alt="" coords="331,259,399,285"/>
+</map>

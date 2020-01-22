@@ -1,0 +1,6 @@
+<map id="HAL_InitTick" name="HAL_InitTick">
+<area shape="rect" id="node1" title="This function configures the source of the time base. The time source is configured to have 1ms time ..." alt="" coords="276,31,371,57"/>
+<area shape="rect" id="node2" href="$group___h_a_l___exported___functions___group1.html#gaecac54d350c3730e6831eb404e557dc4" title="This function is used to initialize the HAL Library; it must be the first instruction to be executed ..." alt="" coords="131,5,201,32"/>
+<area shape="rect" id="node4" href="$group___h_a_l___exported___functions___group2.html#ga47f2dd240b2aed823a76b11496f37690" title="Set new tick Freq." alt="" coords="104,56,228,83"/>
+<area shape="rect" id="node3" href="$main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="The application entry point." alt="" coords="5,5,56,32"/>
+</map>

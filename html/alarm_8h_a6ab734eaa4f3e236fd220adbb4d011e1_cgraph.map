@@ -1,0 +1,25 @@
+<map id="ALARM_CheckIfAdminOperation" name="ALARM_CheckIfAdminOperation">
+<area shape="rect" id="node1" title=" " alt="" coords="5,183,216,209"/>
+<area shape="rect" id="node2" href="$admin_8h.html#a43ece623d692e54c0a6ca5078248f643" title=" " alt="" coords="264,5,455,32"/>
+<area shape="rect" id="node3" href="$admin_8h.html#a1cff53f2a5a2f685eac23cb175e9addf" title=" " alt="" coords="291,56,428,83"/>
+<area shape="rect" id="node5" href="$alarm_8c.html#a5bff671170e8a7e44258c31475764cc7" title=" " alt="" coords="324,107,395,133"/>
+<area shape="rect" id="node8" href="$flash_8h.html#a1d2ec38b19dab2019f42e3f343a01f65" title=" " alt="" coords="291,259,427,285"/>
+<area shape="rect" id="node15" href="$lcd_8h.html#ae60d0b62d7eb3fa31266c095d7b3c245" title=" " alt="" coords="317,321,401,348"/>
+<area shape="rect" id="node19" href="$lcd_8h.html#ae7351af6c530bf6d7bf96fb8e2f07e36" title=" " alt="" coords="304,372,415,399"/>
+<area shape="rect" id="node20" href="$alarm_8c.html#ab4b5a2aa0692d671d327651e2e7861cf" title=" " alt="" coords="314,208,405,235"/>
+<area shape="rect" id="node23" href="$alarm_8c.html#a5013422fb0d54365b15fcc0a5011dca5" title=" " alt="" coords="312,157,407,184"/>
+<area shape="rect" id="node4" href="$group___u_a_r_t___exported___functions___group2.html#ga210329848c1873957034e129ccf8944e" title=" " alt="" coords="503,56,648,83"/>
+<area shape="rect" id="node6" href="$alarm_8c.html#a90286d28ca93311cb9f115d15a32bdac" title=" " alt="" coords="526,107,625,133"/>
+<area shape="rect" id="node7" href="$rc552_8h.html#a09f03fcc9cf6e2a9a6b7563ace07a89b" title=" " alt="" coords="715,100,854,127"/>
+<area shape="rect" id="node9" href="$flash_8c.html#a8b17dff9bfb3e1a546fbdbe1d83e907d" title=" " alt="" coords="535,259,616,285"/>
+<area shape="rect" id="node10" href="$group___f_l_a_s_h___exported___functions___group3.html#ga20e71ba6b2a09cd5b9f0bd369f842de3" title=" " alt="" coords="709,201,861,228"/>
+<area shape="rect" id="node11" href="$group___f_l_a_s_h___exported___functions___group2.html#gae07eeca0b0aa9d5047f8df88d82f4bcd" title=" " alt="" coords="719,252,850,279"/>
+<area shape="rect" id="node12" href="$group___f_l_a_s_h___exported___functions___group1.html#gab94b3dc16c5c6fcc30ba2cb897de8bae" title=" " alt="" coords="709,303,861,329"/>
+<area shape="rect" id="node13" href="$group___f_l_a_s_h___exported___functions___group2.html#ga23d4ff42a8873bac585c92ce4f633747" title=" " alt="" coords="713,353,856,380"/>
+<area shape="rect" id="node14" href="$group___f_l_a_s_h_ex___exported___functions___group1.html#ga3e998fdfd05d4073fb9af251ad649531" title=" " alt="" coords="708,151,861,177"/>
+<area shape="rect" id="node16" href="$lcd_8c.html#a6bf61620f15aa426a9d4ed5c960c2bed" title=" " alt="" coords="516,347,635,373"/>
+<area shape="rect" id="node18" href="$lcd_8c.html#a8082f5f499e14de577c58b3fea65e420" title=" " alt="" coords="516,397,635,424"/>
+<area shape="rect" id="node17" href="$group___i2_c___exported___functions___group2.html#ga9440a306e25c7bd038cfa8619ec9a830" title=" " alt="" coords="696,404,873,431"/>
+<area shape="rect" id="node21" href="$alarm_8c.html#add49b5dbd616dc54f7b0340857b9a21e" title=" " alt="" coords="537,208,614,235"/>
+<area shape="rect" id="node22" href="$alarm_8c.html#a8a0f511ba834f7d0fb43f856256c7b32" title=" " alt="" coords="540,157,611,184"/>
+</map>

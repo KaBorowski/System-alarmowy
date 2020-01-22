@@ -1,0 +1,10 @@
+<map id="TIMEx" name="TIMEx">
+<area shape="rect" id="node1" title="TIM Extended HAL module driver." alt="" coords="216,159,275,184"/>
+<area shape="rect" id="node2" href="$group___t_i_m_ex___private___functions.html" title=" " alt="" coords="323,5,485,31"/>
+<area shape="rect" id="node3" href="$group___t_i_m_ex___exported___constants.html" title=" " alt="" coords="325,55,483,95"/>
+<area shape="rect" id="node4" href="$group___t_i_m_ex___exported___macros.html" title=" " alt="" coords="325,119,483,159"/>
+<area shape="rect" id="node6" href="$group___t_i_m_ex___private___macros.html" title=" " alt="" coords="331,183,477,223"/>
+<area shape="rect" id="node7" href="$group___t_i_m_ex___exported___types.html" title=" " alt="" coords="325,247,483,287"/>
+<area shape="rect" id="node8" href="$group___t_i_m_ex___exported___functions.html" title=" " alt="" coords="325,311,483,351"/>
+<area shape="rect" id="node5" href="$group___s_t_m32_f4xx___h_a_l___driver.html" title=" " alt="" coords="5,159,168,184"/>
+</map>

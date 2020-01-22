@@ -1,0 +1,10 @@
+<map id="LCD_Print_X_Y" name="LCD_Print_X_Y">
+<area shape="rect" id="node1" title=" " alt="" coords="489,107,600,133"/>
+<area shape="rect" id="node2" href="$alarm_8c.html#a6ab734eaa4f3e236fd220adbb4d011e1" title=" " alt="" coords="230,5,441,32"/>
+<area shape="rect" id="node4" href="$alarm_8c.html#ac1de6165b1bab3e75087e8d3ea94eed9" title=" " alt="" coords="237,56,433,83"/>
+<area shape="rect" id="node5" href="$alarm_8c.html#abe9fa911ab7b66b3a23d11233d50e492" title=" " alt="" coords="229,107,441,133"/>
+<area shape="rect" id="node6" href="$alarm_8c.html#a0375da870ba4c6c499527f7a102ec92b" title=" " alt="" coords="246,157,425,184"/>
+<area shape="rect" id="node7" href="$keypad_8c.html#a178d31ba9f77bbcf397315c9463b3755" title=" " alt="" coords="252,208,419,235"/>
+<area shape="rect" id="node3" href="$main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="The application entry point." alt="" coords="68,81,119,108"/>
+<area shape="rect" id="node8" href="$group___g_p_i_o___exported___functions___group2.html#ga0cd91fd3a9608559c2a87a8ba6cba55f" title="EXTI line detection callbacks." alt="" coords="5,208,181,235"/>
+</map>

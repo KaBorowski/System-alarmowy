@@ -2,7 +2,7 @@
  * sonar.h
  *
  *  Created on: 11 gru 2019
- *      Author: Boro
+ *      Author: Karol Borowski
  */
 
 #ifndef SONAR_H_
@@ -21,7 +21,6 @@
 
 #define SONAR_INTRUDER_DETECTION		100
 #define SONAR_DETECTION_VALUE			10
-
 
 void SONAR_count();
 

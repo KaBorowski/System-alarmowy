@@ -1,0 +1,14 @@
+<map id="I2C Exported Constants" name="I2C Exported Constants">
+<area shape="rect" id="node1" href="$group___i2_c__addressing__mode.html" title=" " alt="" coords="338,5,482,31"/>
+<area shape="rect" id="node2" href="$group___i2_c___xfer_options__definition.html" title=" " alt="" coords="327,55,493,80"/>
+<area shape="rect" id="node3" title=" " alt="" coords="95,244,255,269"/>
+<area shape="rect" id="node5" href="$group___i2_c___interrupt__configuration__definition.html" title="I2C Interrupt definition Elements values convention: 0xXXXXXXXX." alt="" coords="325,105,495,145"/>
+<area shape="rect" id="node6" href="$group___i2_c__duty__cycle__in__fast__mode.html" title=" " alt="" coords="320,169,500,195"/>
+<area shape="rect" id="node7" href="$group___i2_c__nostretch__mode.html" title=" " alt="" coords="343,219,477,244"/>
+<area shape="rect" id="node8" href="$group___i2_c__general__call__addressing__mode.html" title=" " alt="" coords="303,268,517,293"/>
+<area shape="rect" id="node9" href="$group___i2_c___memory___address___size.html" title=" " alt="" coords="323,317,497,343"/>
+<area shape="rect" id="node10" href="$group___i2_c___flag__definition.html" title=" " alt="" coords="347,367,473,392"/>
+<area shape="rect" id="node11" href="$group___i2_c___xfer_direction__definition.html" title=" " alt="" coords="324,416,496,441"/>
+<area shape="rect" id="node12" href="$group___i2_c__dual__addressing__mode.html" title=" " alt="" coords="324,465,496,491"/>
+<area shape="rect" id="node4" href="$group___i2_c.html" title="I2C HAL module driver." alt="" coords="5,244,47,269"/>
+</map>
