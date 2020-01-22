@@ -1,0 +1,4 @@
+<map id="HAL_MspDeInit" name="HAL_MspDeInit">
+<area shape="rect" id="node1" title="DeInitializes the MSP." alt="" coords="140,5,252,32"/>
+<area shape="rect" id="node2" href="$group___h_a_l___exported___functions___group1.html#ga95911129a26afb05232caaaefa31956f" title="This function de&#45;Initializes common part of the HAL and stops the systick. This function is optional." alt="" coords="5,5,92,32"/>
+</map>

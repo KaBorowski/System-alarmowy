@@ -5,13 +5,14 @@
  *      Author: Boro
  */
 
-
 #include "state_machine.h"
-
 
 StateMachine stateMachine;
 
-void STATEMACHINE_Init(){
+/**
+ * Initialize state machine and its flags
+ */
+void STATEMACHINE_Init() {
 	stateMachine.actualState = INIT;
 	stateMachine.prevState = INIT;
 	stateMachine.armed = TRUE;

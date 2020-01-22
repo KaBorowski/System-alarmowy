@@ -8,10 +8,8 @@
 #ifndef ADMIN_H_
 #define ADMIN_H_
 
-
 #include "main.h"
 #include "alarm.h"
-
 
 #define ADMIN_MAX_DATA_SIZE				ID_LENGTH + PASSWORD_LENGTH
 #define ADMIN_MIN_FRAME_LENGTH			5
@@ -42,24 +40,21 @@
 #define ADMIN_ID_INDEX					0
 #define ADMIN_PASS_INDEX				ID_LENGTH
 
-typedef struct{
+typedef struct {
 
-	uint8_t 			length;
-	uint8_t				command;
-	uint8_t				data[ADMIN_MAX_DATA_SIZE];
+	uint8_t length;
+	uint8_t command;
+	uint8_t data[ADMIN_MAX_DATA_SIZE];
 
 } AdminFrame_TypeDef;
 
-
-
 void ADMIN_Init();
 void ADMIN_UART_RxCpltCallback();
-uint8_t ADMIN_CheckIfReceivedMsg();
-BoolType ADMIN_SendFrame(uint8_t command, uint8_t *data, uint8_t data_length);
+void ADMIN_SendFrame(uint8_t command, uint8_t *data, uint8_t data_length);
 void ADMIN_SendResponse();
+uint8_t ADMIN_CheckIfReceivedMsg();
 
-extern const char* adminPassword;
+extern const uint8_t adminPassword[PASSWORD_LENGTH];
 extern AdminFrame_TypeDef admin_frame;
-
 
 #endif /* ADMIN_H_ */

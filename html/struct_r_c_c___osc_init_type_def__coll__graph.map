@@ -1,0 +1,4 @@
+<map id="RCC_OscInitTypeDef" name="RCC_OscInitTypeDef">
+<area shape="rect" id="node1" title="RCC Internal/External Oscillator (HSE, HSI, LSE and LSI) configuration structure definition." alt="" coords="5,95,149,121"/>
+<area shape="rect" id="node2" href="$struct_r_c_c___p_l_l_init_type_def.html" title="RCC PLL configuration structure definition." alt="" coords="6,5,149,32"/>
+</map>

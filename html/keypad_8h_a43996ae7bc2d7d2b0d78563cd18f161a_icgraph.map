@@ -1,0 +1,5 @@
+<map id="KEYPAD_ResetCounter" name="KEYPAD_ResetCounter">
+<area shape="rect" id="node1" title=" " alt="" coords="331,5,493,32"/>
+<area shape="rect" id="node2" href="$alarm_8c.html#a0375da870ba4c6c499527f7a102ec92b" title=" " alt="" coords="104,5,283,32"/>
+<area shape="rect" id="node3" href="$main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="The application entry point." alt="" coords="5,5,56,32"/>
+</map>

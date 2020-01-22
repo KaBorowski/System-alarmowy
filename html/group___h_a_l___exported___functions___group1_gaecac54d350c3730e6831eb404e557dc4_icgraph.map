@@ -1,0 +1,4 @@
+<map id="HAL_Init" name="HAL_Init">
+<area shape="rect" id="node1" title="This function is used to initialize the HAL Library; it must be the first instruction to be executed ..." alt="" coords="104,5,175,32"/>
+<area shape="rect" id="node2" href="$main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="The application entry point." alt="" coords="5,5,56,32"/>
+</map>

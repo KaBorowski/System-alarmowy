@@ -1,0 +1,5 @@
+<map id="HAL_MspInit" name="HAL_MspInit">
+<area shape="rect" id="node1" title="Initialize the MSP." alt="" coords="223,5,319,32"/>
+<area shape="rect" id="node2" href="$group___h_a_l___exported___functions___group1.html#gaecac54d350c3730e6831eb404e557dc4" title="This function is used to initialize the HAL Library; it must be the first instruction to be executed ..." alt="" coords="104,5,175,32"/>
+<area shape="rect" id="node3" href="$main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="The application entry point." alt="" coords="5,5,56,32"/>
+</map>

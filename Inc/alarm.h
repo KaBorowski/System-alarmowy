@@ -2,7 +2,7 @@
  * alarm.h
  *
  *  Created on: 5 gru 2019
- *      Author: Boro
+ *      Author: Karol Borowski
  */
 
 #ifndef ALARM_H_
@@ -16,7 +16,6 @@
 #define ID_LENGTH					5
 
 #define USERS_LIMIT					10
-#define FLASH_DATA_SIZE				USERS_LIMIT*(PASSWORD_LENGTH+ID_LENGTH)
 
 #define DOOR_UNLOCKED				HAL_GPIO_WritePin(DOOR_ENABLE_GPIO_Port, DOOR_ENABLE_Pin, GPIO_PIN_RESET);
 #define DOOR_LOCKED					HAL_GPIO_WritePin(DOOR_ENABLE_GPIO_Port, DOOR_ENABLE_Pin, GPIO_PIN_SET);
@@ -30,14 +29,13 @@
 
 #define NO_USER						255
 
-//TODO: Card status
-typedef struct{
+typedef struct {
 	uint8_t card_id[ID_LENGTH];
 	char pass[PASSWORD_LENGTH];
 	BoolType isActive;
-}UserType;
+} UserType;
 
-typedef enum{
+typedef enum {
 	WAITING_FOR_CARD = 0,
 	WAITING_FOR_PIN,
 	PIN_TYPED,
@@ -45,9 +43,8 @@ typedef enum{
 	ACCESS_DENIED
 } AuthorizationStatusType;
 
-typedef enum{
-	UNDETECTED,
-	DETECTED
+typedef enum {
+	UNDETECTED, DETECTED
 } IntruderStatusType;
 
 typedef uint8_t OperationResult;
@@ -61,6 +58,5 @@ extern void ALARM_CheckIfAdminOperation();
 extern AuthorizationStatusType authorizationStatus;
 extern IntruderStatusType intruderStatus;
 extern UserType userList[USERS_LIMIT];
-
 
 #endif /* ALARM_H_ */
