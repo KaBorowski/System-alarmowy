@@ -1,0 +1,5 @@
+<map id="SAU Functions" name="SAU Functions">
+<area shape="rect" id="node1" title="Functions that configure the SAU." alt="" coords="163,5,273,31"/>
+<area shape="rect" id="node3" href="$group___c_m_s_i_s___core___sys_tick_functions.html" title="Functions that configure the System." alt="" coords="321,5,452,31"/>
+<area shape="rect" id="node2" href="$group___c_m_s_i_s___core___fpu_functions.html" title="Function that provides FPU type." alt="" coords="5,5,115,31"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="Inc/admin.h" name="Inc/admin.h">
+<area shape="rect" id="node1" title=" " alt="" coords="177,5,267,32"/>
+<area shape="rect" id="node2" href="$admin_8c.html" title=" " alt="" coords="5,80,97,107"/>
+<area shape="rect" id="node3" href="$alarm_8c.html" title=" " alt="" coords="121,80,211,107"/>
+<area shape="rect" id="node4" href="$main_8c.html" title=": Main program body" alt="" coords="235,80,321,107"/>
+<area shape="rect" id="node5" href="$usart_8c.html" title=" " alt="" coords="345,80,432,107"/>
+</map>

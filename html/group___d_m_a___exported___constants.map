@@ -1,0 +1,19 @@
+<map id="DMA Exported Constants" name="DMA Exported Constants">
+<area shape="rect" id="node1" href="$group___d_m_a___memory__burst.html" title="DMA memory burst." alt="" coords="367,5,502,31"/>
+<area shape="rect" id="node2" title="DMA Exported constants." alt="" coords="104,367,275,392"/>
+<area shape="rect" id="node3" href="$group___d_m_a___f_i_f_o__threshold__level.html" title="DMA FIFO level." alt="" coords="364,55,505,95"/>
+<area shape="rect" id="node4" href="$group___d_m_a___memory__incremented__mode.html" title="DMA memory incremented mode." alt="" coords="328,120,541,145"/>
+<area shape="rect" id="node5" href="$group___d_m_a___memory__data__size.html" title="DMA memory data size." alt="" coords="355,169,514,195"/>
+<area shape="rect" id="node6" href="$group___d_m_a___peripheral__burst.html" title="DMA peripheral burst." alt="" coords="361,219,508,244"/>
+<area shape="rect" id="node7" href="$group___d_m_a__flag__definitions.html" title="DMA flag definitions." alt="" coords="366,268,503,293"/>
+<area shape="rect" id="node8" href="$group___d_m_a__mode.html" title="DMA mode." alt="" coords="391,317,478,343"/>
+<area shape="rect" id="node9" href="$group___d_m_a___f_i_f_o__direct__mode.html" title="DMA FIFO direct mode." alt="" coords="357,367,513,392"/>
+<area shape="rect" id="node10" href="$group___d_m_a__interrupt__enable__definitions.html" title="DMA interrupts definition." alt="" coords="363,417,507,457"/>
+<area shape="rect" id="node12" href="$group___d_m_a___data__transfer__direction.html" title="DMA data transfer direction." alt="" coords="343,481,526,507"/>
+<area shape="rect" id="node13" href="$group___d_m_a___peripheral__data__size.html" title="DMA peripheral data size." alt="" coords="349,531,520,556"/>
+<area shape="rect" id="node14" href="$group___d_m_a___error___code.html" title="DMA Error Code." alt="" coords="376,580,493,605"/>
+<area shape="rect" id="node15" href="$group___d_m_a___priority__level.html" title="DMA priority levels." alt="" coords="372,629,497,655"/>
+<area shape="rect" id="node16" href="$group___d_m_a___peripheral__incremented__mode.html" title="DMA peripheral incremented mode." alt="" coords="323,679,547,704"/>
+<area shape="rect" id="node17" href="$group___d_m_a___channel__selection.html" title="DMA channel selection." alt="" coords="355,728,514,753"/>
+<area shape="rect" id="node11" href="$group___d_m_a.html" title="DMA HAL module driver." alt="" coords="5,367,56,392"/>
+</map>

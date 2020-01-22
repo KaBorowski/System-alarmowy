@@ -1,0 +1,8 @@
+<map id="__I2C_HandleTypeDef" name="__I2C_HandleTypeDef">
+<area shape="rect" id="node1" title=" " alt="" coords="249,199,399,225"/>
+<area shape="rect" id="node2" href="$struct_____d_m_a___handle_type_def.html" title="DMA handle Structure definition." alt="" coords="85,95,243,121"/>
+<area shape="rect" id="node3" href="$struct_d_m_a___stream___type_def.html" title="DMA Controller." alt="" coords="5,5,160,32"/>
+<area shape="rect" id="node4" href="$struct_d_m_a___init_type_def.html" title="DMA Configuration Structure definition." alt="" coords="184,5,307,32"/>
+<area shape="rect" id="node5" href="$struct_i2_c___init_type_def.html" title=" " alt="" coords="268,95,380,121"/>
+<area shape="rect" id="node6" href="$struct_i2_c___type_def.html" title="Inter&#45;integrated Circuit Interface." alt="" coords="405,95,499,121"/>
+</map>

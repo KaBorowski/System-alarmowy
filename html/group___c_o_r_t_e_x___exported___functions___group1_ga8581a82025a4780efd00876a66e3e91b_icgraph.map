@@ -1,0 +1,11 @@
+<map id="HAL_NVIC_SetPriority" name="HAL_NVIC_SetPriority">
+<area shape="rect" id="node1" title=" " alt="" coords="485,107,637,133"/>
+<area shape="rect" id="node2" href="$group___h_a_l___exported___functions___group1.html#ga44d1542f9985b2243b14a41070cc41cc" title="This function configures the source of the time base. The time source is configured to have 1ms time ..." alt="" coords="309,5,404,32"/>
+<area shape="rect" id="node6" href="$group___s_p_i___exported___functions___group1.html#ga17f583be14b22caffa6c4e56dcd035ef" title=" " alt="" coords="295,56,419,83"/>
+<area shape="rect" id="node7" href="$group___t_i_m___exported___functions___group1.html#ga818f4d5d1e2f417438d281b4ac9efb9c" title=" " alt="" coords="276,107,437,133"/>
+<area shape="rect" id="node8" href="$group___u_a_r_t___exported___functions___group1.html#ga0e553b32211877322f949b14801bbfa7" title=" " alt="" coords="288,157,425,184"/>
+<area shape="rect" id="node9" href="$gpio_8c.html#ac724e431d2af879252de35615be2bdea" title=" " alt="" coords="115,157,217,184"/>
+<area shape="rect" id="node3" href="$group___h_a_l___exported___functions___group1.html#gaecac54d350c3730e6831eb404e557dc4" title="This function is used to initialize the HAL Library; it must be the first instruction to be executed ..." alt="" coords="131,5,201,32"/>
+<area shape="rect" id="node5" href="$group___h_a_l___exported___functions___group2.html#ga47f2dd240b2aed823a76b11496f37690" title="Set new tick Freq." alt="" coords="104,56,228,83"/>
+<area shape="rect" id="node4" href="$main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="The application entry point." alt="" coords="5,81,56,108"/>
+</map>

@@ -1,0 +1,11 @@
+<map id="Stm32f401xe" name="Stm32f401xe">
+<area shape="rect" id="node1" href="$group___peripheral__memory__map.html" title=" " alt="" coords="308,5,475,31"/>
+<area shape="rect" id="node2" href="$group___exported__constants.html" title=" " alt="" coords="322,55,461,80"/>
+<area shape="rect" id="node3" href="$group___exported__macros.html" title=" " alt="" coords="329,104,453,129"/>
+<area shape="rect" id="node4" href="$group___c_m_s_i_s___device.html" title=" " alt="" coords="5,161,113,187"/>
+<area shape="rect" id="node5" title=" " alt="" coords="161,161,260,187"/>
+<area shape="rect" id="node6" href="$group___peripheral__interrupt__number__definition.html" title=" " alt="" coords="324,154,459,194"/>
+<area shape="rect" id="node7" href="$group___peripheral__registers__structures.html" title=" " alt="" coords="323,218,460,258"/>
+<area shape="rect" id="node8" href="$group___configuration__section__for___c_m_s_i_s.html" title=" " alt="" coords="318,282,465,322"/>
+<area shape="rect" id="node9" href="$group___peripheral__declaration.html" title=" " alt="" coords="316,347,467,372"/>
+</map>

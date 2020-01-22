@@ -1,0 +1,7 @@
+<map id="LCD_Init" name="LCD_Init">
+<area shape="rect" id="node1" title=" " alt="" coords="5,31,76,57"/>
+<area shape="rect" id="node2" href="$group___h_a_l___exported___functions___group2.html#gab1dc1e6b438daacfe38a312a90221330" title="This function provides minimum delay (in milliseconds) based on variable incremented." alt="" coords="140,5,227,32"/>
+<area shape="rect" id="node4" href="$lcd_8c.html#a6bf61620f15aa426a9d4ed5c960c2bed" title=" " alt="" coords="124,56,243,83"/>
+<area shape="rect" id="node3" href="$group___h_a_l___exported___functions___group2.html#gac9b3a85a73735ac840d0dcb59bc0fdd6" title="Provides a tick value in millisecond." alt="" coords="330,5,429,32"/>
+<area shape="rect" id="node5" href="$group___i2_c___exported___functions___group2.html#ga9440a306e25c7bd038cfa8619ec9a830" title=" " alt="" coords="291,56,468,83"/>
+</map>

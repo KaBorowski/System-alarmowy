@@ -1,0 +1,9 @@
+<map id="I2C Exported Types" name="I2C Exported Types">
+<area shape="rect" id="node1" href="$group___h_a_l__mode__structure__definition.html" title="HAL Mode structure definition." alt="" coords="298,5,437,45"/>
+<area shape="rect" id="node2" href="$group___i2_c.html" title="I2C HAL module driver." alt="" coords="5,127,47,153"/>
+<area shape="rect" id="node4" title=" " alt="" coords="95,127,231,153"/>
+<area shape="rect" id="node3" href="$group___i2_c___error___code__definition.html" title="I2C Error Code definition." alt="" coords="286,70,449,95"/>
+<area shape="rect" id="node5" href="$group___i2_c__handle___structure__definition.html" title="I2C handle Structure definition." alt="" coords="297,120,437,160"/>
+<area shape="rect" id="node6" href="$group___h_a_l__state__structure__definition.html" title="HAL State structure definition." alt="" coords="300,184,435,224"/>
+<area shape="rect" id="node7" href="$group___i2_c___configuration___structure__definition.html" title="I2C Configuration Structure definition." alt="" coords="279,248,456,288"/>
+</map>

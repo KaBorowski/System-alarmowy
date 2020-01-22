@@ -1,0 +1,4 @@
+<map id="APB1 Peripheral Clock Enable Disable Status" name="APB1 Peripheral Clock Enable Disable Status">
+<area shape="rect" id="node1" title="Get the enable or disable status of the APB1 peripheral clock." alt="" coords="205,5,360,45"/>
+<area shape="rect" id="node2" href="$group___r_c_c___exported___macros.html" title=" " alt="" coords="5,13,157,38"/>
+</map>

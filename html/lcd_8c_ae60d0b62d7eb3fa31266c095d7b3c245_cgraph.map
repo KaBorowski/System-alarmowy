@@ -1,0 +1,5 @@
+<map id="LCD_Clear" name="LCD_Clear">
+<area shape="rect" id="node1" title=" " alt="" coords="5,31,89,57"/>
+<area shape="rect" id="node2" href="$lcd_8c.html#a6bf61620f15aa426a9d4ed5c960c2bed" title=" " alt="" coords="137,5,256,32"/>
+<area shape="rect" id="node3" href="$lcd_8c.html#a8082f5f499e14de577c58b3fea65e420" title=" " alt="" coords="137,56,256,83"/>
+</map>
